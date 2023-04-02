@@ -1,0 +1,13 @@
+$color: #eff;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $color;
+  width: 100%;
+  .login {
+    color: red;
+  }
+}
