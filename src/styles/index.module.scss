@@ -1,13 +1,61 @@
-$color: #eff;
-
-.container {
+.globalContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  background: $color;
-  width: 100%;
-  .login {
-    color: red;
+  margin: 3rem;
+  .loginContainer {
+    width: 80%;
+    background-color: #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    .form {
+      margin: 0 3rem;
+    }
+    .formGroup {
+      padding: 0.4rem;
+      display: flex;
+      width: 100%;
+      .label {
+        width: 5rem;
+      }
+      .input {
+        margin-left: 1rem;
+        width: 12rem;
+      }
+    }
+    .loginButton {
+      width: 10rem;
+      margin-top: 2rem;
+      background-color: greenyellow;
+	    border: 1px solid black;
+      border-radius: 1rem;
+      color: black;
+      padding: 0.2rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .todosContainer {
+    width: 80%;
+    background-color: #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    .logoutButton {
+      width: 10rem;
+      background-color: red;
+	    border: 1px solid black;
+      border-radius: 1rem;
+      color: white;
+      padding: 0.2rem;
+      font-weight: bold;
+      &:hover {
+        cursor: pointer;
+      }
+      margin: 3rem 3rem 0;
+    }
   }
 }

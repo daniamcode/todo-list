@@ -14,15 +14,18 @@ const TaskList = ({
     return (
       <ul className={styles.list}>
         {tasks.map((task) => (
-          <li key={task.id}>
+          <li className={styles.listItem} key={task.id}>
             <input
               type="checkbox"
               checked={task.completed}
               onChange={() => onUpdateTaskStatus(task.id)}
+              className={styles.checkbox}
             />
-            <label className={task.completed ? "completed" : ""}>{task.description}</label>
-            <button onClick={() => onUpdateTask(task.id)}>Edit</button>
-            <button onClick={() => onDeleteTask(task.id)}>Delete</button>
+            <div className={styles.description}>{task.description}</div>
+            <div className={styles.actions}>
+              <button className={styles.button} onClick={() => onUpdateTask(task.id)}>Edit</button>
+              <button className={styles.button} onClick={() => onDeleteTask(task.id)}>Delete</button>
+            </div>
           </li>
         ))}
       </ul>

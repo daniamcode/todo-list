@@ -4,8 +4,8 @@ import styles from "../styles/index.module.scss";
 import { Task } from "@/interfaces/common";
 import fakeToken from "@/data/fakeData";
 import TaskList from "@/components/TaskList";
-import Form from "@/components/Form";
 import Login from "@/components/Login";
+import TaskInput from "@/components/TaskInput";
 
 const Home = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -86,16 +86,16 @@ const Home = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.globalContainer}>
       {!token && (
         <Login 
           handleLogin={handleLogin}
         />
       )}
       {token && (
-        <div className="todo">
+        <div className={styles.todosContainer}>
           <h2>To do list</h2>
-          <Form 
+          <TaskInput 
             handleSubmit={handleSubmit}
             handleTaskChange={handleTaskChange}
             mode={mode}
@@ -111,7 +111,7 @@ const Home = () => {
           ) : (
             <p>No tasks found</p>
           )}
-          <button onClick={handleLogout}>Logout</button>
+          <button className={styles.logoutButton} onClick={handleLogout}>Logout</button>
         </div>
       )}
     </div>
